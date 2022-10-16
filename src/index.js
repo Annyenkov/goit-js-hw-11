@@ -2,7 +2,7 @@ import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 import Notiflix from 'notiflix';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
-import onSearch from './js/onSearch';
+import onSearch from './js/onsearch';
 import makeMarkupEl from './js/markup';
 
 const pixabay = new onSearch();
