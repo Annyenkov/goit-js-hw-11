@@ -2,7 +2,7 @@ const axios = require('axios').default;
 import Notiflix from 'notiflix';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
-export default class onSearch {
+export default class onsearch {
   constructor() {
     this.searchQuery = '';
     this.page = 1;
@@ -22,15 +22,17 @@ export default class onSearch {
       const response = await axios.get(
         `${config.URL}?key=${config.key}&q=${this.searchQuery}&page=${this.page}&per_page=${config.per_page}&image_type=${config.image_type}&orientation=${config.orientation}&safesearch=${config.safesearch}`
       );
+      const searchPhoto = this.searchQuery.trim();
+      console.log(searchPhoto)
 
-      if (response.data.total === 0) {
+      if ((!searchPhoto && !this.searchQuery) || (!searchPhoto && this.searchQuery >= ' ')) {
         Notify.warning(
           'Sorry, there are no images matching your search query. Please try again.'
         );
         return;
       }
 
-      if (response.data = ' ') {
+      if (response.data.total === 0) {
         Notify.warning(
           'Sorry, there are no images matching your search query. Please try again.'
         );
