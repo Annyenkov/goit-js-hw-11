@@ -30,6 +30,13 @@ export default class onSearch {
         return;
       }
 
+      if (response.data = ' ') {
+        Notify.warning(
+          'Sorry, there are no images matching your search query. Please try again.'
+        );
+        return;
+      }
+
       if (this.page === 1) {
         Notify.success(`Hooray! We found ${response.data.totalHits} images.`);
       }

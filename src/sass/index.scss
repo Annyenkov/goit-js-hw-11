@@ -1,12 +1,6 @@
 @import './common';
 @import './example';
 
-.container {
-  max-width: 1200px;
-  padding: 0 30;
-  margin: 0 auto;
-}
-
 .form__thumb {
   padding-top: 10px;
   padding-bottom: 10px;
@@ -68,10 +62,15 @@
 .gallery {
   display: flex;
   flex-wrap: wrap;
+  margin: 0 -8px;
 
-  margin: -5px;
 
   margin-bottom: 20px;
+}
+.container {
+  width: 1216px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .info {
@@ -90,8 +89,8 @@
   flex-direction: column;
   flex-grow: 1;
 
-  margin: 5px;
-  max-width: calc((100% / 3) - 10px);
+  margin: 8px;
+  max-width: calc((100% / 3) - 16px);
   height: auto;
 
   border: 1px solid rgba(238, 238, 238, 1);
